@@ -12,9 +12,18 @@
     --ff-secondary: 'Source Code Pro', monospace;
     --fw-reg: 300;
     --fw-bold: 900;
+    /*    
     --clr-light: #fff;
     --clr-dark: #303030;
     --clr-accent: #16e0bd;
+    */
+    /* Color */
+    --clr-banner-text: #1F2833;
+    --clr-background: #0B0C10;
+    --clr-text: #C5C6C7;
+    --clr-title: #66FCF1;
+    --clr-banner: #45A29E;
+    /* Font size*/
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
@@ -39,8 +48,7 @@ html {
 }
 
 body {
-    background: var(--clr-light);
-    color: var(--clr-dark);
+    background-color: var(--clr-background);
     margin: 0;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
@@ -53,7 +61,7 @@ img {
 }
 
 strong {
-    font-weight: var(--fw-bold)
+    font-weight: var(--fw-bold);
 }
 
 ul {
@@ -62,22 +70,27 @@ ul {
 
 li {
     padding: 0.5em 0em;
+    color: var(--clr-text);
 }
 
 a {
     text-decoration: none;
 }
 
+p {
+    color: var(--clr-text) !important;
+}
+
 :focus {
-    outline: 3px solid var(--clr-accent);
+    outline: 3px solid black;
     outline-offset: 3px;
 }
 
 .btn {
     display: inline-block;
     padding: .5em 2.5em;
-    background: var(--clr-accent);
-    color: var(--clr-dark);
+    background: var(--clr-banner-text);
+    color: var(--clr-text);
     text-decoration: none;
     cursor: pointer;
     font-size: .8rem;
@@ -110,7 +123,8 @@ h2 {
 }
 
 h3 {
-    font-size: var(--fs-h3)
+    font-size: var(--fs-h3);
+    color: var(--clr-text);
 }
 
 .section__title {
@@ -119,20 +133,24 @@ h3 {
 
 .section__title--home {
     font-weight: var(--fw-reg);
+    color: var(--clr-text);
 }
 
 .section__title--home strong {
     display: block;
+    color: var(--clr-title)
 }
 
 .section__subtitle {
     margin: 0;
     font-size: var(--fs-h3);
+    color: var(--clr-text);
 }
 
 .section__subtitle--home,
 .section__subtitle--about {
-    background: var(--clr-accent);
+    background: var(--clr-banner);
+    color: var(--clr-banner-text);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
@@ -148,7 +166,7 @@ h3 {
 /* Header and Navigation - Styling */
 
 header {
-    background: rgba(0, 214, 170, .85);
+    background: var(--clr-banner-text);
     text-align: center;
     position: fixed;
     z-index: 999;
@@ -179,7 +197,7 @@ header {
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
     display: block;
-    background: black;
+    background: #fff;
     height: 2px;
     width: 2em;
     border-radius: 2px;
@@ -205,7 +223,7 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    background: rgba(0, 214, 170, .85);
+    background: var(--clr-banner-text);
     width: 100%;
     transform: scale(1, 0);
     transform-origin: top;
@@ -223,7 +241,7 @@ nav li {
 }
 
 nav a {
-    color: black;
+    color: var(--clr-text);
     font-size: 1.2rem;
     text-transform: uppercase;
     opacity: 0;
@@ -231,7 +249,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #000;
+    color: #fff;
 }
 
 .nav-toggle:checked~nav {
@@ -323,7 +341,7 @@ nav a:hover {
         content: '';
         display: block;
         height: 5px;
-        background: black;
+        background: white;
         position: absolute;
         top: -.75em;
         left: 0;
@@ -392,6 +410,10 @@ nav a:hover {
     box-shadow: var(--bs);
 }
 
+.section__title--about {
+    color: var(--clr-title);
+}
+
 @media (min-width: 600px) {
     .about-me {
         padding: 9em 5em;
@@ -433,7 +455,7 @@ nav a:hover {
 }
 
 .section__title--skills {
-    color: var(--clr-accent);
+    color: var(--clr-title);
     position: relative;
 }
 
@@ -443,7 +465,7 @@ nav a:hover {
     width: 2em;
     height: 1px;
     margin: 0.5em auto 1em;
-    background: var(--clr-light);
+    background: white;
     opacity: 0.25;
 }
 
@@ -476,9 +498,12 @@ nav a:hover {
 
 .my-projects {
     background-color: var(--clr-dark);
-    color: var(--clr-light);
     text-align: center;
     padding: 4em 2em;
+}
+
+.section__title--projects {
+    color: var(--clr-title)
 }
 
 .project-list {
@@ -569,6 +594,10 @@ nav a:hover {
     padding: 4em 2em;
     text-align: center;
     align-items: center;
+}
+
+.section__title--contact-me {
+    color: var(--clr-title);
 }
 
 .border {
