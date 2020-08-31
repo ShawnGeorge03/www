@@ -60,6 +60,10 @@ ul {
     list-style: none;
 }
 
+li {
+    padding: 0.5em 0em;
+}
+
 a {
     text-decoration: none;
 }
@@ -616,6 +620,10 @@ textarea.contact-form-text {
 
 .contact-form-btn:hover {
     background: #2980b9;
+}
+
+.recaptcha {
+    align-items: center;
 }
 
 @media screen and (min-width: 800px) {
