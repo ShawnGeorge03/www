@@ -377,8 +377,9 @@ nav a:hover {
         grid-template-columns: min-content max-content;
     }
     .home__img {
+        all: unset;
         grid-area: img;
-        min-width: 250px;
+        content: url('../img/Introduction-Pic_250x250.jpg');
         position: relative;
         z-index: 2;
     }
