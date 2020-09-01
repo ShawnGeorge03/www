@@ -12,11 +12,6 @@
     --ff-secondary: 'Source Code Pro', monospace;
     --fw-reg: 300;
     --fw-bold: 900;
-    /*    
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #16e0bd;
-    */
     /* Color */
     --clr-banner-text: #1F2833;
     --clr-background: #0B0C10;
@@ -71,6 +66,8 @@ ul {
 li {
     padding: 0.5em 0em;
     color: var(--clr-text);
+    word-spacing: 1em;
+    font-size: var(--fs-h3);
 }
 
 a {
@@ -478,6 +475,11 @@ nav a:hover {
     margin: 0 auto;
 }
 
+.icon {
+    width: 5%;
+    height: 5%;
+}
+
 @media (min-width: 800px) {
     .my-skills {
         padding: 9em 5em;
@@ -665,7 +667,7 @@ textarea.contact-form-text {
 /* Footer- Styling */
 
 .footer {
-    background: #111;
+    background: var(--clr-banner-text);
     color: var(--clr-text);
     text-align: center;
     padding: 2.5em 0;
