@@ -157,7 +157,7 @@ h3 {
 }
 
 .section__subtitle--projects {
-    color: var(--clr-accent);
+    color: var(--clr-banner-text);
     font-weight: var(--fw-bold);
     margin-bottom: 2em;
 }
@@ -180,7 +180,7 @@ header {
 }
 
 .nav-toggle:focus~.nav-toggle-label {
-    outline: 3px solid rgba(black, .75);
+    outline: 3px solid rgba(173, 216, 230, .75);
 }
 
 .nav-toggle-label {
@@ -446,11 +446,11 @@ nav a:hover {
 
 .my-skills {
     padding: 4em 2em;
-    background-color: var(--clr-dark);
+    background-color: var(--clr-banner-text);
     background-image: url(../img/services-bg.jpg);
     background-size: cover;
     background-blend-mode: color-dodge;
-    color: var(--clr-light);
+    color: var(--clr-text);
     text-align: center;
 }
 
@@ -497,7 +497,7 @@ nav a:hover {
 /* Section : Work - Styling */
 
 .my-projects {
-    background-color: var(--clr-dark);
+    background-color: var(--clr-background);
     text-align: center;
     padding: 4em 2em;
 }
@@ -666,7 +666,7 @@ textarea.contact-form-text {
 
 .footer {
     background: #111;
-    color: var(--clr-accent);
+    color: var(--clr-text);
     text-align: center;
     padding: 2.5em 0;
     font-size: var(--fs-h3);
