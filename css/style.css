@@ -359,7 +359,7 @@ nav a:hover {
 }
 
 .home__img {
-    content: url('../img/Introduction-Pic.jpg');
+    content: url('../img/Intro-Pic.webp');
     box-shadow: var(--bs);
 }
 
