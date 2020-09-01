@@ -359,6 +359,7 @@ nav a:hover {
 }
 
 .home__img {
+    content: url('../img/Introduction-Pic.jpg');
     box-shadow: var(--bs);
 }
 
@@ -379,7 +380,6 @@ nav a:hover {
     .home__img {
         all: unset;
         grid-area: img;
-        content: url('../img/Introduction-Pic_250x250.jpg');
         position: relative;
         z-index: 2;
     }
@@ -411,7 +411,7 @@ nav a:hover {
     color: var(--clr-title);
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
     .about-me {
         padding: 9em 5em;
         display: grid;
