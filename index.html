@@ -1,223 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shawn SG DEMO-SITE</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <p class="logo">SG</p>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#">Resume</a></li>
-            </ul>
-        </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-            <span></span>
-        </label>
+      <p class="logo">SG</p>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#">Resume</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
     </header>
 
     <!-- Introduction -->
     <section class="home" id="home">
-        <h1 class="section__title section__title--home">
-            Hi, my name is <strong>Shawn Santhoshgeorge</strong>
-        </h1>
-        <p class="section__subtitle section__subtitle--home">a Major in Statistics - Coop Student</p>
-        <img src="img/Intro-Pic-250x250.webp" alt="a picture of Shawn Santhoshgeorge" class="home__img">
+      <h1 class="section__title section__title--home">
+        Hi, my name is <strong>Shawn Santhoshgeorge</strong>
+      </h1>
+      <p class="section__subtitle section__subtitle--home">
+        a Major in Statistics - Coop Student
+      </p>
+      <img
+        src="img/Intro-Pic-250x250.webp"
+        alt="a picture of Shawn Santhoshgeorge"
+        class="home__img"
+      />
     </section>
 
     <!-- About me -->
     <section class="about-me" id="about">
-        <h2 class="section__title section__title--about">About Me</h2>
-        <p class="section__subtitle section__subtitle--about">Currently : Studying Data Science with focus in ML & AI @ UTSC
+      <h2 class="section__title section__title--about">About Me</h2>
+      <p class="section__subtitle section__subtitle--about">
+        Currently : Studying Data Science with focus in ML & AI @ UTSC
+      </p>
+
+      <div class="about-me__body">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
         </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
 
-        <div class="about-me__body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-
-        <img src="img/About-Me-Pic.webp" alt="a picture of Shawn Santhoshgeorge" class="about-me__img">
+      <img
+        src="img/About-Me-Pic.webp"
+        alt="a picture of Shawn Santhoshgeorge"
+        class="about-me__img"
+      />
     </section>
-
 
     <!-- My Skills -->
     <section class="my-skills" id="skills">
-        <h2 class="section__title section__title--skills">My Skills</h2>
-        <div class="skills">
-            <div class="skill-group">
-                <h3 class="skills-name">Programming Languages</h3>
-                <ul>
-                    <li class="skill-list-item"><embed class="icon" src="icons/java-original.svg"> Java</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/c-original.svg"> C</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/python-original.svg"> Python</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/html5-original-wordmark.svg"> HTML5</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/css3-original-wordmark.svg"> CSS</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/javascript-original.svg"> JavaScript</li>
-                </ul>
-            </div>
-            <!-- / Skill Group 1 -->
-
-            <div class="skill-group">
-                <h3 class="skills-name">Frameworks and other technologies</h3>
-                <ul>
-                    <li class="skill-list-item"><embed class="icon" src="icons/github-original.svg"> GitHub</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/terminal.svg"> Shell</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/windows8-original.svg"> Windows</li>
-                    <li class="skill-list-item"><embed class="icon" src="icons/database.svg"> SQL</li>
-                </ul>
-            </div>
-            <!-- / Skill Group 2 -->
+      <h2 class="section__title section__title--skills">My Skills</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3 class="skills-name">Programming Languages</h3>
+          <ul>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/java-original.svg" /> Java
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/c-original.svg" /> C
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/python-original.svg" /> Python
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/html5-original-wordmark.svg" />
+              HTML5
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/css3-original-wordmark.svg" /> CSS
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/javascript-original.svg" />
+              JavaScript
+            </li>
+          </ul>
         </div>
-        <!-- / Skills -->
-        <a href="#projects" class="btn">My Projects</a>
+        <!-- / Skill Group 1 -->
+
+        <div class="skill-group">
+          <h3 class="skills-name">Frameworks and other technologies</h3>
+          <ul>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/github-original.svg" /> GitHub
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/terminal.svg" /> Shell
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/windows8-original.svg" /> Windows
+            </li>
+            <li class="skill-list-item">
+              <embed class="icon" src="icons/database.svg" /> SQL
+            </li>
+          </ul>
+        </div>
+        <!-- / Skill Group 2 -->
+      </div>
+      <!-- / Skills -->
+      <a href="#projects" class="btn">My Projects</a>
     </section>
 
     <!-- My Projects -->
     <section class="my-projects" id="projects">
-        <h2 class="section__title section__title--projects">My Projects</h2>
-        <p class="section__subtitle section__subtitle--projects">A selection of my range of projects</p>
+      <h2 class="section__title section__title--projects">My Projects</h2>
+      <p class="section__subtitle section__subtitle--projects">
+        A selection of my range of projects
+      </p>
 
-        <div class="project-list">
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-01.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
+      <div class="project-list">
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-01.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
             </div>
-
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-02.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-03.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-04.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-05.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-06.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-07.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="content">
-                <a href="">
-                    <div class="content-overlay"></div>
-                    <img class="content-image" src="img/portfolio-08.webp" alt="">
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                    </div>
-                </a>
-            </div>
+          </a>
         </div>
+
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-02.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-03.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-04.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-05.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-06.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-07.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="content">
+          <a href="">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="img/portfolio-08.webp" alt="" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">This is a title</h3>
+              <p class="content-text">This is a short description</p>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section class="contact-me">
-        <h2 class="section__title section__title--contact-me">Contact Me</h2>
+      <h2 class="section__title section__title--contact-me">Contact Me</h2>
 
-        <form class="contact-form" method="POST" data-netlify="true">
-            <div class="border"></div>
-            <input name="name" type="text" class="contact-form-text" placeholder="Your Name">
-            <input name="email" type="email" class="contact-form-text" placeholder="Your email">
-            <input name="phone-number" type="text" class="contact-form-text" placeholder="Your phone">
-            <textarea name="message" class="contact-form-text" placeholder="Your message"></textarea>
-            <input type="submit" class="contact-form-btn" value="Send">
-        </form>
-
+      <form class="contact-form" method="POST" data-netlify="true">
+        <div class="border"></div>
+        <input
+          name="name"
+          type="text"
+          class="contact-form-text"
+          placeholder="Your Name"
+        />
+        <input
+          name="email"
+          type="email"
+          class="contact-form-text"
+          placeholder="Your email"
+        />
+        <input
+          name="phone-number"
+          type="text"
+          class="contact-form-text"
+          placeholder="Your phone"
+        />
+        <textarea
+          name="message"
+          class="contact-form-text"
+          placeholder="Your message"
+        ></textarea>
+        <input type="submit" class="contact-form-btn" value="Send" />
+      </form>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <a href="mailto:shawn.santhoshgeorge@gmail.com" class="footer__link">shawn.santhoshgeorge@gmail.com</a>
-        <ul class="social-list">
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://github.com/ShawnGeorge03">
-                    <embed src="icons/github-original.svg">
-                </a>
-            </li>
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://www.linkedin.com/in/shawn-santhoshgeorge/">
-                    <embed src="icons/linkedin-original.svg">
-                </a>
-            </li>
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://www.facebook.com/profile.php?id=100011850376499">
-                    <embed src="icons/facebook-original.svg">
-                </a>
-            </li>
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://www.instagram.com/shawn_george3/?hl=en">
-                    <embed src="icons/icons8-instagram.svg">
-                </a>
-            </li>
-        </ul>
+      <a href="mailto:shawn.santhoshgeorge@gmail.com" class="footer__link"
+        >shawn.santhoshgeorge@gmail.com</a
+      >
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a class="social-list__link" href="https://github.com/ShawnGeorge03">
+            <embed src="icons/github-original.svg" />
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="https://www.linkedin.com/in/shawn-santhoshgeorge/"
+          >
+            <embed src="icons/linkedin-original.svg" />
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="https://www.facebook.com/profile.php?id=100011850376499"
+          >
+            <embed src="icons/facebook-original.svg" />
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a
+            class="social-list__link"
+            href="https://www.instagram.com/shawn_george3/?hl=en"
+          >
+            <embed src="icons/icons8-instagram.svg" />
+          </a>
+        </li>
+      </ul>
     </footer>
-</body>
-
+  </body>
 </html>
