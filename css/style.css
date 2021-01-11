@@ -365,7 +365,7 @@ nav a:hover {
 }
 
 .home__img {
-  content: url("../img/Intro-Pic.webp");
+  content: url("../img/Home-Page-FullImg.webp");
   box-shadow: var(--bs);
 }
 
@@ -448,7 +448,7 @@ nav a:hover {
 .my-skills {
   padding: 4em 2em;
   background-color: var(--clr-banner-text);
-  background-image: url(../img/services-bg.jpg);
+  background-image: url(../img/services-bg.webp);
   background-size: cover;
   background-blend-mode: color-dodge;
   color: var(--clr-text);
