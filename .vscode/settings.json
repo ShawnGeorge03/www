@@ -1,0 +1,21 @@
+{
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "conventionalCommits.emojiFormat": "emoji",
+  "conventionalCommits.autoCommit": false,
+  "conventionalCommits.promptCI": false,
+  "conventionalCommits.scopes": ["astro", "vscode"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["javascript", "astro", "typescript"],
+  "prettier.configPath": ".prettierrc",
+  "prettier.ignorePath": ".prettierignore",
+  "prettier.documentSelectors": ["**/*.astro"],
+
+  "svg.preview.background": "transparent",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
