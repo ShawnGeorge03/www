@@ -1,0 +1,121 @@
+---
+import type { Link } from "@/types"
+
+import Icons from "@/components/Icons.astro"
+import NavItem from "@/layouts/Navigation/NavItem.astro"
+import NavToggle from "@/layouts/Navigation/NavToggle.astro"
+
+import "@/styles/layouts/Navigation/NavBar.scss"
+
+interface Props {
+  links: Link[]
+}
+
+const { links } = Astro.props
+---
+
+<>
+  <a
+    href="/#hero"
+    tabindex="0">
+    <Icons
+      id="logo"
+      name="logo"
+    />
+  </a>
+  <nav>
+    <ul class="menu">
+      {links.map((link) => <NavItem link={link} />)}
+    </ul>
+  </nav>
+  <NavToggle />
+</>
+
+<script is:inline>
+  // Get DOM Elements
+  const nav = document.querySelector("nav")
+  const menu = document.querySelector(".menu")
+  const items = [
+    ...document.querySelectorAll(".item"),
+    ...document.querySelectorAll(".submenu-item"),
+  ]
+  const toggle = document.querySelector(".toggle")
+
+  // Open the Menu
+  const openMenu = () => {
+    menu.classList.add("active")
+    nav.classList.add("show")
+    document.body.style.overflow = "hidden"
+    toggle.classList.add("pressed")
+  }
+
+  // Close the Menu
+  const closeMenu = () => {
+    menu.classList.remove("active")
+    nav.classList.remove("show")
+    document.body.style.overflow = "initial"
+    toggle.classList.remove("pressed")
+  }
+
+  /* Event Listeners */
+
+  // Close Mobile Menu on Escape Keypress
+  document.addEventListener("keydown", ({ key }) => {
+    if (
+      (key === "Escape" || key === "Esc") &&
+      menu.classList.contains("active")
+    ) {
+      closeMenu()
+    }
+  })
+
+  // Close Mobile Menu on Clicking Outside
+  document.addEventListener("click", (e) => {
+    if (
+      !menu.contains(e.target) &&
+      menu.classList.contains("active") &&
+      !toggle.contains(e.target) &&
+      !e.target.classList.contains("toggle") &&
+      !e.target.classList.contains("item")
+    ) {
+      closeMenu()
+    }
+  })
+
+  // Toggle Mobile Menu
+  toggle.addEventListener("click", () => {
+    if (menu.classList.contains("active")) closeMenu()
+    else openMenu()
+  })
+
+  for (const item of items) {
+    if (item.querySelector(".submenu"))
+      item.addEventListener("click", toggleSubmenu) // Toggle SubMenu
+    else item.addEventListener("click", closeMenu) // Close Mobile Menu on Item Click
+  }
+
+  // Toggle SubMenu
+  function toggleSubmenu() {
+    if (this.classList.contains("submenu-active")) {
+      this.classList.remove("submenu-active")
+      this.querySelector("span.arrow").classList.replace("up", "down")
+    } else {
+      this.classList.add("submenu-active")
+      this.querySelector("span.arrow").classList.replace("down", "up")
+    }
+  }
+
+  // Close Mobile SubMenu on Clicking Outside
+  document.addEventListener("click", (e) => {
+    const tag = menu.querySelector(".submenu-active")
+    if (tag) {
+      const isClickInside = tag.contains(e.target)
+
+      if (!isClickInside) {
+        const arrow = tag.querySelector("span.arrow")
+        if (arrow) arrow.classList.replace("up", "down")
+        tag.classList.remove("submenu-active")
+      }
+    }
+  })
+</script>
