@@ -1,5 +1,20 @@
 ---
+import type { Link } from "@/types"
+
 import BaseLayout from "@/layouts/BaseLayout.astro"
+import NavBar from "@/layouts/Navigation/NavBar.astro"
+
+const links: Link[] = [
+  { title: "About", href: "/#about-me" },
+  { title: "Experience", href: "/#experience" },
+  { title: "Projects", href: "/#projects" },
+  { title: "Contact", href: "/#contact" },
+]
 ---
 
-<BaseLayout />
+<BaseLayout>
+  <NavBar
+    links={links}
+    slot="navigation"
+  />
+</BaseLayout>
