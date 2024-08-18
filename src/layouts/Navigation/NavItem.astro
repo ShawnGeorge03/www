@@ -1,0 +1,33 @@
+---
+import "@/styles/layouts/Navigation/NavItem.scss"
+
+import type { Link } from "@/types"
+
+interface Props {
+  link: Link
+}
+
+const { link } = Astro.props
+---
+
+{
+  link.sublinks === undefined ? (
+    <li class="item">
+      <a href={link.href}>{link.title}</a>
+    </li>
+  ) : (
+    <li class="submenu-item">
+      <a href={link.href}>
+        {link.title}
+        <span class="arrow down" />
+      </a>
+      <ul class="submenu">
+        {link.sublinks.map((sublink) => (
+          <li class="subitem">
+            <a href={sublink.href}>{sublink.title}</a>
+          </li>
+        ))}
+      </ul>
+    </li>
+  )
+}
