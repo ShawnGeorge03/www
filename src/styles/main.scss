@@ -18,8 +18,11 @@ html {
 }
 
 body {
-  font-family: "Inter Variable", sans-serif;
+  width: 100%;
+  height: 100dvh;
   font-weight: 400;
+  font-family: "Inter Variable", sans-serif;
+  background-color: var(--background-950);
 }
 
 h1 {
@@ -44,4 +47,19 @@ h5 {
 
 small {
   font-size: 0.707rem; /* 11.36px */
+}
+
+a {
+  color: var(--text-50);
+  font-style: normal;
+  line-height: normal;
+
+  &:hover {
+    color: var(--text-200);
+  }
+
+  &:active,
+  &:focus {
+    color: var(--text-300);
+  }
 }
