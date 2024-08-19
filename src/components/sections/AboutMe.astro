@@ -1,0 +1,44 @@
+---
+import Desktop from "@/assets/AboutMe/Desktop.jpg"
+import Mobile from "@/assets/AboutMe/Mobile.jpg"
+
+import "@/styles/components/sections/AboutMe.scss"
+---
+
+<section id="about-me">
+  <h2 class="title">About Me</h2>
+  <p class="subtitle">Recent UTSC Graduate</p>
+  <div class="image_outline">
+    <picture>
+      <source
+        media="(max-width: 800px)"
+        srcset={Mobile.src}
+      />
+      <source
+        media="(min-width: 600px)"
+        srcset={Desktop.src}
+      />
+      <img
+        class="img"
+        alt="Shawn at Vagamon, Kerela"
+      />
+    </picture>
+  </div>
+  <div class="content">
+    <p>
+      I'm a recent graduate with a Bachelor's degree in Statistics from UTSC,
+      and an eager aspiring Full Stack Developer. While statistics provided me
+      with a strong foundation in data analysis and problem-solving, I've been
+      captivated by the world of web development. The ability to translate ideas
+      into interactive and user-friendly web applications truly excites me.
+    </p>
+    <p>
+      During my statistics studies, I discovered a passion for working with data
+      in a more visual and interactive way. This led me to explore programming
+      languages like Python and R for data visualization. However, I wanted the
+      ability to build the complete user experience, not just the data analysis
+      behind it. That's when I delved into the world of web development, and I
+      haven't looked back!
+    </p>
+  </div>
+</section>

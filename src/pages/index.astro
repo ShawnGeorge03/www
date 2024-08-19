@@ -4,6 +4,7 @@ import type { Link } from "@/types"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import NavBar from "@/layouts/Navigation/NavBar.astro"
 
+import AboutMe from "@/components/sections/AboutMe.astro"
 import Hero from "@/components/sections/Hero.astro"
 
 import "@/styles/pages/index.scss"
@@ -22,4 +23,5 @@ const links: Link[] = [
     slot="navigation"
   />
   <Hero />
+  <AboutMe />
 </BaseLayout>

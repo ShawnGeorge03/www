@@ -1,0 +1,67 @@
+@import "@/styles/abstracts/mixins";
+@import "@/styles/abstracts/variables";
+
+#about-me {
+  .title {
+    text-align: left;
+  }
+
+  .subtitle {
+    background: var(--primary-700);
+    padding: 0.25em 0.75em;
+    margin-bottom: 1em;
+    font-weight: 600;
+    font-size: 20px;
+    height: fit-content;
+  }
+
+  .image_outline {
+    display: inline-block;
+    border: 1px solid var(--secondary-50);
+    border-radius: 5px;
+
+    img {
+      border-radius: 5px;
+      transform: translate(-10px, -5px);
+    }
+  }
+
+  .content > p {
+    padding-bottom: 1em;
+    text-align: justify;
+  }
+}
+
+@include geq(800px) {
+  #about-me {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+      "title    image"
+      "subtitle image"
+      "content  image";
+    grid-column-gap: 5em;
+
+    .title {
+      grid-area: title;
+    }
+
+    .subtitle {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      left: -1em;
+      width: calc(100% + 2em);
+      font-size: 25px;
+      padding-top: 0.5em;
+    }
+
+    .image_outline {
+      grid-area: image;
+      height: fit-content;
+    }
+
+    .content {
+      grid-area: content;
+    }
+  }
+}
