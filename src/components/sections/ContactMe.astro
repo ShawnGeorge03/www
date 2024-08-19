@@ -1,0 +1,102 @@
+---
+import Icon from "@/components/Icon.astro"
+
+import "@/styles/components/sections/ContactMe.scss"
+
+const socials = [
+  {
+    icon: "email",
+    title: "Email",
+    label: "shawn.santhoshgeorge@gmail.com",
+    href: "mailto:shawn.santhoshgeorge@gmail.com",
+  },
+  {
+    icon: "phone",
+    title: "Phone",
+    label: "+1 (437) 223-2001",
+    href: "tel:+14372232001",
+  },
+  {
+    icon: "linkedin",
+    title: "LinkedIn",
+    label: "/shawnsg",
+    href: "https://www.linkedin.com/in/shawnsg/",
+  },
+]
+---
+
+<section id="contact">
+  <h2>Let's Connect <span>👋</span></h2>
+  <p class="description">
+    I am always looking to make new connections, so drop me an email or shoot me
+    a DM on LinkedIn. Who knows where the conversation could lead ?
+  </p>
+  <div class="content">
+    <div class="socials">
+      {
+        socials.map(({ icon, title, label, href }) => (
+          <div
+            id={icon}
+            class="social">
+            <Icon
+              id="method-icon"
+              name={icon}
+            />
+            <p class="title">{title}</p>
+            <a
+              class="label"
+              href={href}>
+              {label}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    <form
+      id="contact-form"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot>
+      <p class="hidden">
+        <label>
+          Don't fill this out if you're human:
+          <input name="bot-field" />
+        </label>
+      </p>
+      <input
+        type="hidden"
+        name="form-name"
+        value="feedback"
+      />
+      <label for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        required
+      />
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        required
+      />
+      <label for="email">Phone</label>
+      <input
+        id="phone"
+        type="tel"
+        pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+        name="phone"
+        required
+      />
+      <label for="feedback">Message</label>
+      <textarea
+        id="feedback"
+        name="feedback"
+        required
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
