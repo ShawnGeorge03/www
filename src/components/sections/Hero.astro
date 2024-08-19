@@ -1,0 +1,32 @@
+---
+import Icons from "@/components/Icon.astro"
+
+import "@/styles/components/sections/Hero.scss"
+
+const resumeURL =
+  "https://storage.rxresu.me/clt0tb9ta03tou6pucgdwi1ay/resumes/Full Stack Software Developer.pdf"
+---
+
+<section id="hero">
+  <p class="text">hey it's me</p>
+  <h1 class="name">Shawn Santhoshgeorge</h1>
+  <h2 class="tagline">Design. Code. Experiment</h2>
+  <p class="content">
+    I'm a passionate Web Developer with a knack for building clean, responsive
+    websites that are both beautiful and functional. I am always eager to
+    broaden my horizons and acquire new skills that will allow me to do my work
+    more efficiently. Take a look at my projects and let's connect!
+  </p>
+  <a
+    href={resumeURL}
+    target="_blank"
+    rel="noopener noreferrer">
+    <button>
+      View CV
+      <Icons
+        id="arrow"
+        name="arrow"
+      />
+    </button>
+  </a>
+</section>
