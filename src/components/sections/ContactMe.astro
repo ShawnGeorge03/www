@@ -98,3 +98,21 @@ const socials = [
     </form>
   </div>
 </section>
+
+<script is:inline>
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error))
+  }
+
+  document.querySelector("form").addEventListener("submit", handleSubmit)
+</script>
