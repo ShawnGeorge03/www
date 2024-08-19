@@ -25,12 +25,22 @@ body {
   background-color: var(--background-950);
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75em;
+  padding-inline: 7vw;
+  padding-block: 25vh;
+}
+
 h1 {
-  font-size: 5.652rem; /* 90.4px */
+  color: var(--primary-100);
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
 }
 
 h2 {
-  font-size: 3.997rem; /* 64px */
+  color: var(--primary-200);
+  font-size: clamp(1.5rem, 3vw + 1rem, 4rem);
 }
 
 h3 {
@@ -61,5 +71,35 @@ a {
   &:active,
   &:focus {
     color: var(--text-300);
+  }
+}
+
+p {
+  color: var(--text-50);
+  font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+}
+
+button {
+  display: flex;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--accent-400);
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--accent-500);
+  }
+
+  &:focus {
+    outline-style: none;
+    box-shadow: 0 0 0 4px var(--accent-600);
   }
 }
