@@ -2,6 +2,9 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
   "conventionalCommits.emojiFormat": "emoji",
   "conventionalCommits.autoCommit": false,
   "conventionalCommits.promptCI": false,
