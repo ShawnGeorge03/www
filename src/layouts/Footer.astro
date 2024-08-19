@@ -1,7 +1,37 @@
 ---
 import "@/styles/layouts/Footer.scss"
+
+const res = await fetch(
+  "https://api.github.com/repos/ShawnGeorge03/FinLearn/branches/main"
+)
+  .then(function (response) {
+    return response.json()
+  })
+  .catch((error) => {
+    console.error(error)
+  })
+
+let lastUpdatedDate = undefined
+
+if (res) {
+  let githubDate = new Date(res.commit.commit.author.date)
+  githubDate = new Date(
+    githubDate.getTime() + githubDate.getTimezoneOffset() * 60000
+  )
+
+  lastUpdatedDate = githubDate.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  })
+}
 ---
 
 <footer>
   <p>made with ❤️ by Shawn SG</p>
+  {lastUpdatedDate && <p>{lastUpdatedDate}</p>}
 </footer>

@@ -1,6 +1,8 @@
 footer {
-  height: 8vh;
+  height: 10dvh;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
+  gap: 1em;
 }
