@@ -151,13 +151,13 @@ button {
   line-height: 1.25rem;
   font-weight: 500;
   color: #ffffff;
-  background-color: var(--accent-400);
+  background-color: var(--accent-500);
   cursor: pointer;
   border: none;
   white-space: nowrap;
 
   &:hover {
-    background-color: var(--accent-500);
+    background-color: var(--accent-600);
   }
 
   &:focus {
