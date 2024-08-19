@@ -1,0 +1,82 @@
+---
+import type { Project } from "@/types"
+
+import DS3Website from "@/assets/Projects/DS3_Website.png"
+import MockShell from "@/assets/Projects/Mock_Shell.png"
+
+import "@/styles/components/sections/Projects.scss"
+
+// https://youtube.com/clip/Ugkx9o6xzwLy85tflCLlfJnwBSp5nIcnwNjv?si=JhlMILxivtIjxjdn
+const projects: Project[] = [
+  {
+    name: "Portfolio Website",
+    img: "",
+    href: "https://shawnsg.netlify.app/",
+  },
+  {
+    name: "DS3 Website",
+    img: DS3Website.src,
+    href: "https://ds3utsc.com/",
+  },
+  {
+    name: "Datathon Leaderboard",
+    img: "",
+    href: "",
+  },
+  {
+    name: "FinLearn",
+    img: "",
+    href: "",
+  },
+  {
+    name: "Review of Double Descent",
+    img: "",
+    href: "",
+  },
+  {
+    name: "Seoul Bike Data Analysis",
+    img: "",
+    href: "",
+  },
+  {
+    name: "Mock Shell",
+    img: MockShell.src,
+    href: "",
+  },
+  {
+    name: "Covid-19 World Map",
+    img: "",
+    href: "",
+  },
+  {
+    name: "Polygot",
+    img: "",
+    href: "",
+  },
+  {
+    name: "GamseeAI",
+    img: "",
+    href: "",
+  },
+]
+---
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div id="content">
+    {
+      projects.map((project) => (
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer">
+          <div
+            class="project"
+            style={"background-image: url(" + project.img + ");"}>
+            <p class="title">{project.name}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>
