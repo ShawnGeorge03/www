@@ -5,7 +5,7 @@ import "@/styles/components/sections/ContactMe.scss"
 
 const socials = [
   {
-    icon: "email",
+    icon: "webmail",
     title: "Email",
     label: "shawn.santhoshgeorge@gmail.com",
     href: "mailto:shawn.santhoshgeorge@gmail.com",
@@ -54,6 +54,7 @@ const socials = [
     </div>
     <form
       id="contact-form"
+      name="Contact Me"
       method="POST"
       data-netlify="true"
       netlify-honeypot>
@@ -74,9 +75,9 @@ const socials = [
         type="text"
         required
       />
-      <label for="webmail">Email</label>
+      <label for="email">Email</label>
       <input
-        id="webmail"
+        id="email"
         type="email"
         required
       />
