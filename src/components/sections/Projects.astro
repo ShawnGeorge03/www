@@ -63,7 +63,7 @@ const projects: Project[] = [
 
 <section id="projects">
   <h2>Projects</h2>
-  <div id="content">
+  <div class="content">
     {
       projects.map((project) => (
         <a
@@ -73,7 +73,7 @@ const projects: Project[] = [
           <div
             class="project"
             style={"background-image: url(" + project.img + ");"}>
-            <p class="title">{project.name}</p>
+            <p class="name">{project.name}</p>
           </div>
         </a>
       ))
