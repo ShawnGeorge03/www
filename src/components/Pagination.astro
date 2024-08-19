@@ -1,0 +1,111 @@
+---
+import type { Project } from "@/types"
+
+import "@/styles/components/Pagination.scss"
+
+interface Props {
+  items: Project[]
+  itemsPerPage?: number
+  type: "project"
+}
+
+const { items, itemsPerPage = 2, type } = Astro.props
+---
+
+<div id="content"></div>
+<div id="pagination"></div>
+
+<script is:inline define:vars={{ items, itemsPerPage, type }}>
+  const contentElem = document.getElementById("content")
+  const paginationElem = document.getElementById("pagination")
+
+  let currPage = 1
+
+  function createPaginationElement(type, item) {
+    if (type === "project") {
+      const itemLinkElm = document.createElement("a")
+      itemLinkElm.href = item.href
+      itemLinkElm.target = "_blank"
+      itemLinkElm.rel = "noopener noreferrer"
+
+      const itemDivElm = document.createElement("div")
+      itemDivElm.classList.add(type)
+      itemDivElm.style.backgroundImage = `url(${item.img})`
+
+      const itemTitleElm = document.createElement("p")
+      itemTitleElm.classList.add("title")
+      itemTitleElm.innerText = item.name
+
+      itemDivElm.appendChild(itemTitleElm)
+      itemLinkElm.appendChild(itemDivElm)
+
+      return itemLinkElm
+    }
+  }
+
+  function displayPage(pageNum) {
+    contentElem.innerHTML = ""
+    pageNum--
+
+    const start = itemsPerPage * pageNum
+    const end = start + itemsPerPage
+    const paginatedItems = items.slice(start, end)
+
+    for (const item of paginatedItems) {
+      const itemElm = createPaginationElement(type, item)
+      contentElem.appendChild(itemElm)
+    }
+  }
+
+  function createPaginationButton(pageNum) {
+    const button = document.createElement("p")
+    button.innerText = pageNum
+
+    if (currPage == pageNum) button.classList.add("active")
+
+    button.addEventListener("click", () => {
+      currPage = pageNum
+      displayPage(pageNum)
+    })
+
+    return button
+  }
+
+  function createPrevPagination(container) {
+    const prevBtn = document.createElement("p")
+    prevBtn.innerHTML = "←"
+    prevBtn.addEventListener("click", () => {
+      if (currPage <= 1) return
+      currPage--
+      displayPage(currPage)
+    })
+    container.appendChild(prevBtn)
+  }
+
+  function createNextPagination(container, pageCount) {
+    const nextBtn = document.createElement("span")
+    nextBtn.innerHTML = "→"
+    nextBtn.addEventListener("click", () => {
+      if (currPage === pageCount) return
+      currPage++
+      displayPage(currPage)
+    })
+    container.appendChild(nextBtn)
+  }
+
+  function createPagination() {
+    displayPage(currPage)
+    paginationElem.innerHTML = ""
+
+    createPrevPagination(paginationElem)
+
+    const pageCount = Math.ceil(items.length / itemsPerPage)
+    for (let i = 1; i < pageCount + 1; i++) {
+      paginationElem.appendChild(createPaginationButton(i))
+    }
+
+    createNextPagination(paginationElem, pageCount)
+  }
+
+  createPagination()
+</script>
