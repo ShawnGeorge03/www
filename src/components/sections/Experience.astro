@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets"
+
+import DS3 from "@/assets/Experience/DS3.png"
+import Skatescribe from "@/assets/Experience/Skatescribe.png"
+import Temerity_Analytics from "@/assets/Experience/Temerity_Analytics.png"
+
+import "@/styles/components/sections/Experience.scss"
+
+const experiences = [
+  {
+    position: "Director of Web Development",
+    period: "Sep 2021 - May 2024",
+    logo: DS3,
+    company: "Data Science & Statistics Society",
+    details: [
+      "Led a cross-functional team in the successful launch of a high-performance website using Next.js & Netlify, resulting in improved user experience and increased site traffic.",
+      "Designed an event management platform for DS3 Datathon, facilitating real-time usage tracking of participants allowing organizers to elevate the event's success and participant satisfaction.",
+      "Implemented a real-time leaderboard for DS3 Datathon with Next.js, FastAPI & MongoDB with route caching to drive competition and foster engagement among teams.",
+    ],
+  },
+  {
+    position: "Full Stack Developer Co-op",
+    period: "Jan 2022 - Aug 2022",
+    logo: Temerity_Analytics,
+    company: "Temerity Analytics",
+    details: [
+      "Revamped the Ad Campaign Reports by integrating data from Google Analytics, Google Ads, and Meta Ads resulting in a 20% reduction in generating PPTX reports.",
+      "Spearheaded the redesign of the Ad Campaigns Reports UI/UX, enhancing user experience and enabling seamless integration of new features",
+      "Enhanced website performance and user experience by leading training sessions with the development team on new web technologies and discussing methods to implement new tools",
+    ],
+  },
+  {
+    position: "Junior Software Developer",
+    period: "May 2021 - Aug 2021",
+    logo: Skatescribe,
+    company: "Skatescribe",
+    details: [
+      "Reduced tool change time by 60%, from 2.5 minutes to under 1 minute, by creating a RESTful API to streamline tool insertion and removal.",
+      "Developed a Tool Health Tracking system, preventing potential tool failures and associated CNC damage.",
+      "Reduced CNC startup time by automating manual Database and Server readiness verification checks.",
+    ],
+  },
+]
+---
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="content">
+    {
+      experiences.map(({ position, period, logo, company, details }) => (
+        <details>
+          <summary>
+            <Image
+              class="logo"
+              src={logo}
+              alt={company + " Logo"}
+            />
+            <b class="position">{position}</b>
+            <p class="period">{period}</p>
+          </summary>
+          <ul>
+            {details.map((detail) => (
+              <li>
+                <p>{detail}</p>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<script is:inline>
+  // Fetch all the details element.
+  const details = document.querySelectorAll("details")
+
+  // Add the onclick listeners.
+  details.forEach((detail) => {
+    detail.addEventListener("toggle", () => {
+      if (detail.open) setTargetDetail(detail)
+    })
+  })
+
+  // Close all the details that are not targetDetail.
+  function setTargetDetail(targetDetail) {
+    details.forEach((detail) => {
+      if (detail !== targetDetail) {
+        detail.open = false
+      }
+    })
+  }
+</script>
