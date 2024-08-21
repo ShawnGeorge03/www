@@ -95,12 +95,22 @@ const socials = [
         required
       ></textarea>
       <button type="submit">Submit</button>
+      <span class="spinner">
+        <span class="status"></span>
+      </span>
     </form>
   </div>
 </section>
 
 <script is:inline>
+  const form = document.getElementById("contact-form")
+  const button = document.querySelector("button[type='submit']")
+  const spinner = document.querySelector(".spinner")
+  const status = spinner.firstElementChild
+
   const handleSubmit = (event) => {
+    button.parentNode.removeChild(button)
+    spinner.style.display = "flex"
     event.preventDefault()
 
     const formData = new FormData(event.target)
@@ -110,8 +120,17 @@ const socials = [
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error))
+      .then(() => {
+        status.style.display = "block"
+        status.classList.replace("status", "sucess")
+
+        form.reset()
+      })
+      .catch((error) => {
+        status.style.display = "block"
+        status.classList.replace("status", "error")
+        console.error(error)
+      })
   }
 
   document.querySelector("form").addEventListener("submit", handleSubmit)
