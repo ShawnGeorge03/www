@@ -73,10 +73,14 @@
 
 html {
   font-size: 100%; /* 16px */
-  scroll-behavior: smooth;
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
+  scroll-behavior: smooth;
+  scrollbar-color: var(--background-400) var(--background-800);
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
 }
 
 body {
