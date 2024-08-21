@@ -22,14 +22,18 @@
       transition: 500ms filter ease-in;
       border: 2px solid var(--primary-800);
       border-radius: 10px;
-
-      &:hover {
-        filter: brightness(70%);
-      }
+      background-repeat: no-repeat;
 
       > .name {
         padding-bottom: 0.35em;
         color: #e9fcfa;
+        background-color: black;
+        width: 100%;
+        border-radius: 0 0 7px 7px;
+      }
+
+      &:hover {
+        filter: brightness(70%);
       }
     }
   }
