@@ -231,7 +231,14 @@
   }
 }
 
-@include leq(800px) {
+@include leq(550px) {
+  #contact > .content > .socials {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include between(550px, 800px) {
   #contact > .content {
     .socials {
       display: grid;
