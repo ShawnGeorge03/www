@@ -1,23 +1,23 @@
 ---
-import "@/styles/layouts/Footer.scss"
+import "@/styles/layouts/Footer.scss";
 
 const res = await fetch(
   "https://api.github.com/repos/ShawnGeorge03/FinLearn/branches/main"
 )
   .then(function (response) {
-    return response.json()
+    return response.json();
   })
   .catch((error) => {
-    console.error(error)
-  })
+    console.error(error);
+  });
 
-let lastUpdatedDate = undefined
+let lastUpdatedDate = undefined;
 
 if (res) {
-  let githubDate = new Date(res.commit.commit.author.date)
+  let githubDate = new Date(res.commit.commit.author.date);
   githubDate = new Date(
     githubDate.getTime() + githubDate.getTimezoneOffset() * 60000
-  )
+  );
 
   lastUpdatedDate = githubDate.toLocaleDateString("en-US", {
     weekday: "long",
@@ -27,7 +27,7 @@ if (res) {
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
-  })
+  });
 }
 ---
 

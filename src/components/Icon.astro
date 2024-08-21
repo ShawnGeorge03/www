@@ -1,6 +1,6 @@
 ---
-const { name, id } = Astro.props as { id?: string; name: string }
-const { default: innerHTML } = await import(`../icons/${name}.svg?raw`)
+const { name, id } = Astro.props as { id?: string; name: string };
+const { default: innerHTML } = await import(`../icons/${name}.svg?raw`);
 ---
 
 <div id={id}>

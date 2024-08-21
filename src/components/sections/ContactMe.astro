@@ -1,7 +1,7 @@
 ---
-import Icon from "@/components/Icon.astro"
+import Icon from "@/components/Icon.astro";
 
-import "@/styles/components/sections/ContactMe.scss"
+import "@/styles/components/sections/ContactMe.scss";
 
 const socials = [
   {
@@ -22,7 +22,7 @@ const socials = [
     label: "/shawnsg",
     href: "https://www.linkedin.com/in/shawnsg/",
   },
-]
+];
 ---
 
 <section id="contact">
@@ -103,17 +103,17 @@ const socials = [
 </section>
 
 <script is:inline>
-  const form = document.getElementById("contact-form")
-  const button = document.querySelector("button[type='submit']")
-  const spinner = document.querySelector(".spinner")
-  const status = spinner.firstElementChild
+  const form = document.getElementById("contact-form");
+  const button = document.querySelector("button[type='submit']");
+  const spinner = document.querySelector(".spinner");
+  const status = spinner.firstElementChild;
 
   const handleSubmit = (event) => {
-    button.parentNode.removeChild(button)
-    spinner.style.display = "flex"
-    event.preventDefault()
+    button.parentNode.removeChild(button);
+    spinner.style.display = "flex";
+    event.preventDefault();
 
-    const formData = new FormData(event.target)
+    const formData = new FormData(event.target);
 
     fetch("/", {
       method: "POST",
@@ -121,17 +121,17 @@ const socials = [
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
-        status.style.display = "block"
-        status.classList.replace("status", "sucess")
+        status.style.display = "block";
+        status.classList.replace("status", "sucess");
 
-        form.reset()
+        form.reset();
       })
       .catch((error) => {
-        status.style.display = "block"
-        status.classList.replace("status", "error")
-        console.error(error)
-      })
-  }
+        status.style.display = "block";
+        status.classList.replace("status", "error");
+        console.error(error);
+      });
+  };
 
-  document.querySelector("form").addEventListener("submit", handleSubmit)
+  document.querySelector("form").addEventListener("submit", handleSubmit);
 </script>

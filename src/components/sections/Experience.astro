@@ -1,11 +1,11 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 
-import DS3 from "@/assets/Experience/DS3.png"
-import Skatescribe from "@/assets/Experience/Skatescribe.png"
-import Temerity_Analytics from "@/assets/Experience/Temerity_Analytics.png"
+import DS3 from "@/assets/Experience/DS3.png";
+import Skatescribe from "@/assets/Experience/Skatescribe.png";
+import Temerity_Analytics from "@/assets/Experience/Temerity_Analytics.png";
 
-import "@/styles/components/sections/Experience.scss"
+import "@/styles/components/sections/Experience.scss";
 
 const experiences = [
   {
@@ -41,7 +41,7 @@ const experiences = [
       "Reduced CNC startup time by automating manual Database and Server readiness verification checks.",
     ],
   },
-]
+];
 ---
 
 <section id="experience">
@@ -74,21 +74,21 @@ const experiences = [
 
 <script is:inline>
   // Fetch all the details element.
-  const details = document.querySelectorAll("details")
+  const details = document.querySelectorAll("details");
 
   // Add the onclick listeners.
   details.forEach((detail) => {
     detail.addEventListener("toggle", () => {
-      if (detail.open) setTargetDetail(detail)
-    })
-  })
+      if (detail.open) setTargetDetail(detail);
+    });
+  });
 
   // Close all the details that are not targetDetail.
   function setTargetDetail(targetDetail) {
     details.forEach((detail) => {
       if (detail !== targetDetail) {
-        detail.open = false
+        detail.open = false;
       }
-    })
+    });
   }
 </script>
