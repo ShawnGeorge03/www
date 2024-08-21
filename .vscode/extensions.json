@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "jock.svg",
+    "mhutchie.git-graph",
+    "shardulm94.trailing-spaces",
+    "streetsidesoftware.code-spell-checker",
+    "unifiedjs.vscode-mdx",
+    "visualstudioexptteam.vscodeintellicode",
+    "vivaxy.vscode-conventional-commits",
+    "yoavbls.pretty-ts-errors"
+  ],
+  "unwantedRecommendations": []
+}

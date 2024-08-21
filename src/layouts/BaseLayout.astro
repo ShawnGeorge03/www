@@ -1,0 +1,58 @@
+---
+import "@fontsource-variable/inter";
+
+import Footer from "./Footer.astro";
+
+import "@/styles/main.scss";
+---
+
+<html lang="en">
+  <head>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/favicon.ico"
+    />
+
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
+
+    <meta
+      name="description"
+      content="Experienced software developer with a passion for TypeScript, Python, and Node.js. Skilled in building scalable web applications. Check out my projects and get in touch!"
+    />
+    <meta
+      name="keywords"
+      content="software engineer, software developer, web developer, typescript, python, react, node.js, portfolio"
+    />
+    <meta
+      name="author"
+      content="Shawn Santhoshgeorge"
+    />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <meta charset="utf-8" />
+    <title>Shawn SG</title>
+  </head>
+  <body>
+    <header>
+      <slot name="navigation" />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,33 @@
+---
+import type { Link } from "@/types";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import NavBar from "@/layouts/Navigation/NavBar.astro";
+
+import AboutMe from "@/components/sections/AboutMe.astro";
+import ContactMe from "@/components/sections/ContactMe.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Projects from "@/components/sections/Projects.astro";
+
+import "@/styles/pages/index.scss";
+
+const links: Link[] = [
+  { title: "About", href: "/#about-me" },
+  { title: "Experience", href: "/#experience" },
+  { title: "Projects", href: "/#projects" },
+  { title: "Contact", href: "/#contact" },
+];
+---
+
+<BaseLayout>
+  <NavBar
+    links={links}
+    slot="navigation"
+  />
+  <Hero />
+  <AboutMe />
+  <Experience />
+  <Projects />
+  <ContactMe />
+</BaseLayout>

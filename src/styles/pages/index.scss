@@ -1,0 +1,37 @@
+@import "@/styles/abstracts/mixins";
+
+@include geq(900px) {
+  section {
+    padding-inline: 10vw;
+
+    .content {
+      font-size: 18px;
+    }
+  }
+}
+
+@include geq(1200px) {
+  section {
+    padding-inline: 12.5vw;
+
+    .content {
+      font-size: 20px;
+    }
+  }
+}
+
+@include geq(1400px) {
+  section {
+    padding-inline: 16vw;
+  }
+}
+
+@include geq(1700px) {
+  section {
+    padding-inline: 20vw;
+
+    .content {
+      font-size: 22px;
+    }
+  }
+}

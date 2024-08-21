@@ -1,0 +1,84 @@
+---
+import type { Project } from "@/types";
+
+import COVID_19_Map from "@/assets/Projects/COVID_19_Map.gif";
+import DS3_Datathon_Leaderboard from "@/assets/Projects/DS3_Datathon_Leaderboard.webp";
+import DS3_Website from "@/assets/Projects/DS3_Website.webp";
+import FinLearn from "@/assets/Projects/FinLearn.webp";
+import GamseeAI from "@/assets/Projects/GamseeAI.webp";
+import MockShell from "@/assets/Projects/Mock_Shell.webp";
+import Polygot from "@/assets/Projects/Polygot.webp";
+import Review_of_Double_Descent from "@/assets/Projects/Review_of_Double_Descent.webp";
+import Seoul_Bike_Data_Analysis from "@/assets/Projects/Seoul_Bike_Data_Analysis.webp";
+
+import "@/styles/components/sections/Projects.scss";
+
+// https://youtube.com/clip/Ugkx9o6xzwLy85tflCLlfJnwBSp5nIcnwNjv?si=JhlMILxivtIjxjdn
+const projects: Project[] = [
+  {
+    name: "DS3 Website",
+    img: DS3_Website.src,
+    href: "https://ds3utsc.com/",
+  },
+  {
+    name: "Datathon Leaderboard",
+    img: DS3_Datathon_Leaderboard.src,
+    href: "https://github.com/theDS3/Datathon-Leaderboard",
+  },
+  {
+    name: "FinLearn",
+    img: FinLearn.src,
+    href: "https://github.com/ShawnGeorge03/FinLearn",
+  },
+  {
+    name: "Review of Double Descent",
+    img: Review_of_Double_Descent.src,
+    href: "https://github.com/ShawnGeorge03/STAD80-Review_Of_Double_Descent",
+  },
+  {
+    name: "Seoul Bike Data Analysis",
+    img: Seoul_Bike_Data_Analysis.src,
+    href: "https://github.com/ShawnGeorge03/SeoulBikeData_Analysis",
+  },
+  {
+    name: "Mock Shell",
+    img: MockShell.src,
+    href: "https://github.com/ShawnGeorge03/CSCB07-MockShell",
+  },
+  {
+    name: "Covid-19 World Map",
+    img: COVID_19_Map.src,
+    href: "https://github.com/ShawnGeorge03/Covid-19-World-Map",
+  },
+  {
+    name: "Polygot",
+    img: Polygot.src,
+    href: "https://github.com/ShawnGeorge03/Translator-Discord-Bot",
+  },
+  {
+    name: "GamseeAI",
+    img: GamseeAI.src,
+    href: "https://gamseeai.netlify.app/",
+  },
+];
+---
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="content">
+    {
+      projects.map((project) => (
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer">
+          <div
+            class="project"
+            style={"background-image: url(" + project.img + ");"}>
+            <p class="name">{project.name}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

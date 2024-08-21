@@ -1,0 +1,16 @@
+# See https://prettier.io/docs/en/ignore.html for more about ignoring files.
+
+# dependencies
+node_modules
+pnpm-lock.yaml
+
+# build output
+dist/
+
+# generated types
+.astro/
+
+# logs
+logs
+*.log
+pnpm-debug.log*

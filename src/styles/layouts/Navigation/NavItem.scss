@@ -1,0 +1,88 @@
+@import "@/styles/abstracts/mixins";
+
+.item,
+.submenu-item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  display: none;
+  caret-color: transparent;
+
+  .submenu {
+    display: none;
+  }
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .arrow {
+    padding: 3px;
+    margin-left: 0.5em;
+    display: inline-block;
+    border: solid currentColor;
+    border-width: 0 3px 3px 0;
+    transition: all 250ms ease-in-out;
+
+    &.up {
+      transform: rotate(-135deg);
+      margin-top: 0.25em;
+    }
+
+    &.down {
+      transform: rotate(45deg);
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+.active > .item,
+.active > .submenu-item {
+  display: block;
+
+  &.submenu-active {
+    border-radius: 5px;
+
+    .submenu {
+      display: block;
+      animation: growDown 300ms linear forwards;
+      transform-origin: top center;
+
+      .subitem > a,
+      .subitem > p {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+@include geq(768px) {
+  .menu > .item,
+  .menu > .submenu-item {
+    position: relative;
+    display: block;
+    width: auto;
+
+    &.submenu-active {
+      .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        border-end-end-radius: 5px;
+        border-end-start-radius: 5px;
+        animation: growDown 300ms linear forwards;
+        transform-origin: top center;
+
+        .subitem > a {
+          font-size: 14px;
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}

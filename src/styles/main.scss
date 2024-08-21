@@ -1,0 +1,180 @@
+@import "abstracts/mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+// Based on RealTime Colors - https://www.realtimecolors.com/?colors=e4fbf9-050f0e-40b5a7-154e93-102e5b
+:root {
+  --text-50: light-dark(#031615, #e9fcfa);
+  --text-100: light-dark(#072c29, #d3f8f5);
+  --text-200: light-dark(#0d5952, #a6f2eb);
+  --text-300: light-dark(#14857c, #7aebe2);
+  --text-400: light-dark(#1bb1a5, #4ee4d8);
+  --text-500: light-dark(#21dece, #21dece);
+  --text-600: light-dark(#4ee4d8, #1bb1a5);
+  --text-700: light-dark(#7aebe2, #14857c);
+  --text-800: light-dark(#a6f2eb, #0d5952);
+  --text-900: light-dark(#d3f8f5, #072c29);
+  --text-950: light-dark(#e9fcfa, #031615);
+
+  --background-50: light-dark(#061312, #ecf9f7);
+  --background-100: light-dark(#0d2624, #d9f2f0);
+  --background-200: light-dark(#194d47, #b3e6e0);
+  --background-300: light-dark(#26736b, #8cd9d1);
+  --background-400: light-dark(#33998f, #66ccc2);
+  --background-500: light-dark(#40bfb3, #40bfb3);
+  --background-600: light-dark(#66ccc2, #33998f);
+  --background-700: light-dark(#8cd9d1, #26736b);
+  --background-800: light-dark(#b3e6e0, #194d47);
+  --background-900: light-dark(#d9f2f0, #0d2624);
+  --background-950: light-dark(#ecf9f7, #061312);
+
+  --primary-50: light-dark(#071311, #ecf8f7);
+  --primary-100: light-dark(#0d2623, #d9f2ef);
+  --primary-200: light-dark(#1b4b46, #b4e4df);
+  --primary-300: light-dark(#287169, #8ed7cf);
+  --primary-400: light-dark(#35978c, #68cabf);
+  --primary-500: light-dark(#42bdae, #42bdae);
+  --primary-600: light-dark(#68cabf, #35978c);
+  --primary-700: light-dark(#8ed7cf, #287169);
+  --primary-800: light-dark(#b4e4df, #1b4b46);
+  --primary-900: light-dark(#d9f2ef, #0d2623);
+  --primary-950: light-dark(#ecf8f7, #071311);
+
+  --secondary-50: light-dark(#030c16, #e9f1fc);
+  --secondary-100: light-dark(#06182d, #d2e4f9);
+  --secondary-200: light-dark(#0d2f59, #a6c8f2);
+  --secondary-300: light-dark(#134786, #79adec);
+  --secondary-400: light-dark(#195eb3, #4c91e6);
+  --secondary-500: light-dark(#2076df, #2076df);
+  --secondary-600: light-dark(#4c91e6, #195eb3);
+  --secondary-700: light-dark(#79adec, #134786);
+  --secondary-800: light-dark(#a6c8f2, #0d2f59);
+  --secondary-900: light-dark(#d2e4f9, #06182d);
+  --secondary-950: light-dark(#e9f1fc, #030c16);
+
+  --accent-50: light-dark(#040b16, #e9f0fb);
+  --accent-100: light-dark(#08162b, #d4e2f7);
+  --accent-200: light-dark(#0f2c57, #a8c5f0);
+  --accent-300: light-dark(#174282, #7da8e8);
+  --accent-400: light-dark(#1f58ad, #528be0);
+  --accent-500: light-dark(#266ed9, #266ed9);
+  --accent-600: light-dark(#528be0, #1f58ad);
+  --accent-700: light-dark(#7da8e8, #174282);
+  --accent-800: light-dark(#a8c5f0, #0f2c57);
+  --accent-900: light-dark(#d4e2f7, #08162b);
+  --accent-950: light-dark(#e9f0fb, #040b16);
+}
+
+html {
+  font-size: 100%; /* 16px */
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  scroll-behavior: smooth;
+  scrollbar-color: var(--background-400) var(--background-800);
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  font-weight: 400;
+  font-family: "Inter Variable", sans-serif;
+  background-color: var(--background-950);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75em;
+  padding-inline: 7vw;
+  padding-block: 25vh;
+}
+
+h1 {
+  color: var(--primary-100);
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+}
+
+h2 {
+  color: var(--primary-200);
+  font-size: clamp(1.5rem, 3vw + 1rem, 4rem);
+}
+
+h3 {
+  font-size: 2.827rem; /* 45.28px */
+}
+
+h4 {
+  font-size: 1.999rem; /* 32px */
+}
+
+h5 {
+  font-size: 1.414rem; /* 22.56px */
+}
+
+small {
+  font-size: 0.707rem; /* 11.36px */
+}
+
+a {
+  color: var(--text-50);
+  font-style: normal;
+  line-height: normal;
+
+  &:hover {
+    color: var(--text-200);
+  }
+
+  &:active,
+  &:focus {
+    color: var(--text-300);
+  }
+}
+
+p {
+  color: var(--text-50);
+  font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+}
+
+button {
+  display: flex;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--accent-500);
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--accent-600);
+  }
+
+  &:focus {
+    outline-style: none;
+    box-shadow: 0 0 0 4px var(--accent-600);
+  }
+}
+
+img,
+picture {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

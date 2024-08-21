@@ -1,0 +1,45 @@
+@import "@/styles/abstracts/mixins";
+
+#hero {
+  align-items: baseline;
+
+  .name,
+  .tagline,
+  .content {
+    transition: 0.5s font-size ease-in;
+  }
+
+  .content {
+    max-width: 450px;
+  }
+
+  button > #arrow {
+    width: 1rem;
+    height: 1rem;
+    margin-inline-start: 0.5rem;
+  }
+}
+
+@include leq(650px) {
+  #hero {
+    .name {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1.65rem;
+    }
+  }
+}
+
+@include geq(1200px) {
+  #hero > .content {
+    max-width: 500px;
+  }
+}
+
+@include geq(1700px) {
+  #hero > .content {
+    max-width: 600px;
+  }
+}

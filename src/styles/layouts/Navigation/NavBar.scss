@@ -1,0 +1,93 @@
+@import "@/styles/abstracts/mixins";
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+
+  // Fallback for browsers that don't support backdrop-filter
+  background-color: rgba(0, 0, 0, 0.35);
+
+  // Blur background only for browsers that support backdrop-filter
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  &:has(> nav.show) {
+    height: 100%;
+    padding-bottom: calc(100vh - 5em);
+
+    @media screen and (orientation: portrait) {
+      height: auto;
+    }
+  }
+
+  #logo {
+    width: 7em;
+  }
+
+  nav {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: -100vh;
+    transition-duration: 1s;
+    visibility: hidden;
+
+    a,
+    p {
+      display: block;
+      padding: 15px 5px;
+      font-weight: 700;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &.show {
+      transform: translateY(calc(100vh + 5em));
+      height: 100%;
+      visibility: visible;
+    }
+  }
+}
+
+@include geq(768px) {
+  header {
+    &:has(> nav.show) {
+      height: unset;
+      padding-bottom: unset;
+    }
+
+    nav {
+      position: unset;
+      width: auto;
+      transition-duration: 0ms;
+      visibility: visible;
+
+      &.show {
+        transform: unset;
+        height: unset;
+        visibility: visible;
+      }
+    }
+  }
+}
