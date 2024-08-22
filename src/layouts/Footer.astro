@@ -1,9 +1,10 @@
 ---
 import "@/styles/layouts/Footer.scss";
 
-const res = await fetch(
-  "https://api.github.com/repos/ShawnGeorge03/FinLearn/branches/main"
-)
+const GITHUB_REPOS_API =
+  "https://api.github.com/repos/ShawnGeorge03/Portfolio-Website/branches/main";
+
+const res = await fetch(GITHUB_REPOS_API)
   .then(function (response) {
     return response.json();
   })
