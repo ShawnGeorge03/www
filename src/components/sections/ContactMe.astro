@@ -34,7 +34,7 @@ const socials = [
   <div class="content">
     <div class="socials">
       {
-        socials.map(({ icon, title, label, href }) => (
+        socials.map(({icon, title, label, href}) => (
           <div
             id={icon}
             class="social">
@@ -117,7 +117,7 @@ const socials = [
 
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: {"Content-Type": "application/x-www-form-urlencoded"},
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
